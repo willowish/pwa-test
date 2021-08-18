@@ -1,0 +1,44 @@
+{
+  "images": [
+    {
+      "id": "60d21b4667d0d8992e610c85",
+      "src": "https://img.dummyapi.io/photo-1564694202779-bc908c327862.jpg"
+    },
+    {
+      "id": "60d21b4967d0d8992e610c90",
+      "src": "https://img.dummyapi.io/photo-1510414696678-2415ad8474aa.jpg"
+    },
+    {
+      "id": "60d21b8667d0d8992e610d3f",
+      "src": "https://img.dummyapi.io/photo-1515376721779-7db6951da88d.jpg"
+    },
+    {
+      "id": "60d21b3a67d0d8992e610c60",
+      "src": "https://img.dummyapi.io/photo-1581804928342-4e3405e39c91.jpg"
+    },
+    {
+      "id": "60d21bf967d0d8992e610e9b",
+      "src": "https://img.dummyapi.io/photo-1574457547512-5b1646994eea.jpg"
+    },
+    {
+      "id": "60d21b7d67d0d8992e610d25",
+      "src": "https://img.dummyapi.io/photo-1498534928137-473daa67f5c4.jpg"
+    },
+    {
+      "id": "60d21bd767d0d8992e610e31",
+      "src": "https://img.dummyapi.io/photo-1576707064479-3139e7e8aace.jpg"
+    },
+    {
+      "id": "60d21baa67d0d8992e610da7",
+      "src": "https://img.dummyapi.io/photo-1500879747858-bb1845b61beb.jpg"
+    },
+    {
+      "id": "60d21af967d0d8992e610ba1",
+      "src": "https://img.dummyapi.io/photo-1568572933382-74d440642117.jpg"
+    },
+    {
+      "id": "60d21aeb67d0d8992e610b79",
+      "src": "https://img.dummyapi.io/photo-1579562243430-4732bcb09d91.jpg"
+    }
+  ]
+}

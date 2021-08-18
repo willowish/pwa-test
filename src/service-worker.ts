@@ -30,7 +30,7 @@ precacheAndRoute(self.__WB_MANIFEST);
 const fileExtensionRegexp = new RegExp('/[^/?]+\\.[^/]+$');
 registerRoute(
   // Return false to exempt requests from being fulfilled by index.html.
-  ({ request, url }: { request: Request; url: URL }) => {
+  ({ request, url }: {request: Request; url: URL}) => {
     // If this isn't a navigation, skip.
     if (request.mode !== 'navigate') {
       return false;
@@ -77,4 +77,16 @@ self.addEventListener('message', (event) => {
   }
 });
 
-// Any other custom service worker logic can go here.
+self.addEventListener('install', (e) => {
+  console.log('[Service workers] installed', e);
+})
+
+self.addEventListener('activate', e => {
+  // eslint-disable-next-line no-console
+  console.log('[Service workers] activated', e);
+})
+
+self.addEventListener('fetch', e => {
+  // eslint-disable-next-line no-console
+  console.log('[Service workers] fetch', e);
+})

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:\Program Files\JetBrains\IntelliJ IDEA 2020.2\plugins\maven\lib\maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="SbtLocalSettings">
+    <option name="modificationStamps">
+      <map>
+        <entry key="$USER_HOME$/workspace/CustomerOperatorManager/CustomerOperatorManager" value="1455630336969" />
+        <entry key="D:/Java/workspace/DCAT2/DCAT" value="1484036445832" />
+        <entry key="D:/Java/workspace/automation/NpiAutomation" value="1456228942543" />
+        <entry key="D:/Java/workspace/dcat/DCAT" value="1475846657608" />
+        <entry key="D:/Java/workspace/inno/Server_FrontEnd/Time_Tracking_Helper-server" value="1479199783143" />
+        <entry key="D:/Java/workspace/starter" value="1479197837946" />
+        <entry key="D:/workspace/DCat/DCAT" value="1485437180558" />
+        <entry key="D:/workspace/slot/slot" value="1489735150439" />
+      </map>
+    </option>
+    <option name="projectSyncType">
+      <map>
+        <entry key="D:/workspace/DCat/DCAT" value="PREVIEW" />
+        <entry key="D:/workspace/slot/slot" value="PREVIEW" />
+      </map>
+    </option>
+  </component>
+  <component name="ScalaSbtSettings">
+    <option name="customVMPath" />
+  </component>
+</project>

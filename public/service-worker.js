@@ -7,11 +7,13 @@ self.addEventListener('install', (e) => {
       .then(cache => {
         // eslint-disable-next-line no-console
         console.log('Precaching');
-        cache.add('/');
-        cache.add('/public/index.html');
-        cache.add('/static/js/vendors~main.chunk.js');
-        cache.add('/static/js/bundle.js');
-        cache.add('/static/js/main.chunk.js');
+        cache.addAll([
+          '/',
+          '/static/js/main.chunk.js',
+          '/public/index.html',
+          '/static/js/vendors~main.chunk.js',
+          '/static/js/bundle.js',
+        ]);
       })
   )
 })
@@ -26,6 +28,20 @@ self.addEventListener('fetch', e => {
   console.log('[Service worker] fetch', e);
   e.respondWith(
     caches.match(e.request)
-      .then(response => response ?? fetch(e.request))
+      .then(response => {
+        // eslint-disable-next-line no-console
+        console.log(response);
+        if (response) {
+          return response;
+        }
+        return fetch(e.request)
+          .then(res => {
+            return caches.open('dynamic')
+              .then(cache => {
+                cache.put(e.request.url, res.clone());
+                return res;
+              })
+          })
+      })
   )
 })

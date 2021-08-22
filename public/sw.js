@@ -29,8 +29,6 @@ self.addEventListener('fetch', e => {
   e.respondWith(
     caches.match(e.request)
       .then(response => {
-        // eslint-disable-next-line no-console
-        console.log(response);
         if (response) {
           return response;
         }
@@ -41,6 +39,9 @@ self.addEventListener('fetch', e => {
                 cache.put(e.request.url, res.clone());
                 return res;
               })
+          })
+          .catch(e => {
+
           })
       })
   )

@@ -25,7 +25,7 @@ self.addEventListener('activate', e => {
 })
 
 self.addEventListener('fetch', e => {
-  if (STATIC_FILES_TO_CACHE.some(key => e.request.url.includes(key)) || e.request.url === 'http://localhost:3000/') {
+  if (STATIC_FILES_TO_CACHE.some(key => e.request.url.includes(key))) {
     e.respondWith(caches.match(e.request))
     return;
   }

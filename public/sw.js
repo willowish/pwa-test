@@ -7,7 +7,7 @@ const STATIC_FILES_TO_CACHE = [
   '/static/js/bundle.js',
 ];
 const STATIC_CACHE = 'static-1';
-const DYNAMIC_CACHE = 'dynamic-2';
+const DYNAMIC_CACHE = 'dynamic-5';
 
 self.addEventListener('install', (e) => {
   console.log('[Service worker] installed', e);
@@ -19,26 +19,28 @@ self.addEventListener('install', (e) => {
   )
 })
 
-self.addEventListener('fetch', e => {
-  if (e.request.method === 'GET') {
-    e.respondWith(
-      caches.match(e.request)
-        .then(response => {
-          if (response) {
-            return response;
-          }
-          caches.open(DYNAMIC_CACHE)
-            .then(cache => {
-              return fetch(e.request)
-                .then(res => {
-                  cache.put(e.request, res.clone());
-                  return res;
-                })
-            })
-        })
-    )
-  } else {
-    e.respondWith(fetch(e.request))
-  }
+self.addEventListener('activate', e => {
+  // eslint-disable-next-line no-console
+  console.log('[Service worker] activated', e);
+})
 
+self.addEventListener('fetch', e => {
+  if (STATIC_FILES_TO_CACHE.some(key => e.request.url.includes(key)) || e.request.url === 'http://localhost:3000/') {
+    e.respondWith(caches.match(e.request))
+    return;
+  }
+  e.respondWith(
+    fetch(e.request)
+      .then(requestResponse => {
+        return caches.open(DYNAMIC_CACHE)
+          .then(cache => {
+            cache.put(e.request.url, requestResponse.clone());
+            return requestResponse;
+          })
+
+      })
+      .catch(e => {
+        return caches.match(e.request);
+      })
+  );
 })
